@@ -1,0 +1,299 @@
+@import "./common";
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+#root{
+  height: 100%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  //font-family: 'Teko', sans-serif;
+  color: $textBody;
+  background: $backgroundBody;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow-y: auto;
+  overflow-x: hidden;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+
+  // user can not select
+  user-select: none;
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer */
+  -khtml-user-select: none; /* KHTML browsers (e.g. Konqueror) */
+  -webkit-user-select: none; /* Chrome, Safari, and Opera */
+  -webkit-touch-callout: none; /* Disable Android and iOS callouts*/
+}
+html {
+  scroll-behavior: smooth;
+  height: 100%;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+button {
+  padding: 0 20px;
+  font-size: 21px;
+  font-family: 'Teko', sans-serif;
+  font-weight: $fontMedium;
+  text-transform: uppercase;
+  line-height: 36px;
+  color: $white;
+  height: 34px;
+  border-radius: 4px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+  position: relative;
+  overflow: hidden;
+
+  @media #{$mobiles} {
+  }
+  &:hover{
+    border: solid 1px $primaryDarkBlue !important;
+  }
+
+  &:focus {
+    outline: 0;
+  }
+}
+label{
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 2px;
+  color: $primaryBlue;
+  font-weight: $fontMedium;
+  margin-bottom: 8px;
+}
+input, textarea, select {
+  box-shadow: none;
+  background: $white;
+  width: 100%;
+  color: $primaryDarkBlue;
+  font-size: 14px;
+  font-weight: $fontRegular;
+  padding: 0 10px;
+  border: solid 1px $border;
+  height: 32px;
+
+  @media screen and (max-device-width: 767px){
+  }
+
+  &::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: $color5C;
+  }
+
+  &:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: $color5C;
+  }
+
+  &::-ms-input-placeholder { /* Microsoft Edge */
+    color: $color5C;
+  }
+}
+select{
+  background: url("../images/arrow-black.svg") no-repeat right $white;
+  -webkit-appearance: none;
+  &:focus{
+    outline:0;
+  }
+}
+:after, :before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box
+}
+
+input:focus, textarea:focus, select:focus {
+  outline-offset: 0;
+}
+
+:focus {
+  outline: -webkit-focus-ring-color auto 0px;
+}
+
+ul{
+  list-style-type: none;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  padding-inline-start: 0;
+  li{
+    list-style: none;
+    cursor: pointer;
+  }
+}
+
+@mixin center-items-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@mixin top-items-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@mixin start-items-column {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+@mixin center-items {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin space-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin space-around {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+@mixin space-evenly {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+@mixin w100p {
+  width: 100%;
+}
+@mixin mr20 {
+  margin-right: 20px;
+}
+@mixin mr25 {
+  margin-right: 25px;
+}
+@mixin main-contain {
+  width: 100%;
+  margin: 0 120px;
+  @media screen and (max-width: 1200px) {
+    margin: 0 40px;
+  }
+  @media screen and (max-device-width: 767px){
+    margin: 0 20px;
+  }
+}
+@mixin w1400 {
+  width: 1400px;
+  margin: 0 auto;
+}
+
+@mixin title-text {
+  font-size: $fontTitle;
+  font-weight: $fontBold;
+  color: $black;
+  text-align: center;
+  @media screen and (max-width: 1200px) {
+    font-size: 22px;
+  }
+}
+@mixin sub-title {
+  font-size: 15px;
+  font-weight: $fontRegular;
+  //color: $colorText;
+  width: 50%;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 60px;
+  line-height: 24px;
+  @media screen and (max-width: 1200px) {
+    font-size: 14px;
+  }
+  @media screen and (max-device-width: 767px){
+    font-size: 14px;
+    margin-bottom: 20px;
+    line-height: 18px;
+    width: 80%;
+  }
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait){
+    font-size: 14px;
+    margin-bottom: 30px;
+    line-height: 18px;
+    width: 80%;
+  }
+}
+
+
+@media #{$large-screen} {
+  @mixin main-contain {
+    width: 1200px;
+  }
+}
+
+@media #{$small-screen} {
+  @mixin main-contain {
+    margin: 0 10px;
+  }
+}
+@mixin small-screen {
+  @media screen and (max-width: 1200px) { @content; }
+}
+@mixin mobile {
+  @media screen and (max-device-width: 767px) { @content; }
+  @media screen and (min-width: 0) and (max-width: 767px) { @content; }
+}
+@mixin tablets {
+  @media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: portrait) { @content; }
+}
+
+//  custom scrollbar
+/* width */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  //background: #f3f3f3;
+  background: transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background: transparent;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(34, 48, 50, .8);
+}

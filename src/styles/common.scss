@@ -1,0 +1,49 @@
+//Import font
+
+//Teko font
+@import url('https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500;600;700&display=swap');
+//Roboto font
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+//font-weight
+$fontThin: 100;
+$fontLight: 300;
+$fontRegular: 400;
+$fontMedium: 500;
+$fontBold: 700;
+$fontBlack: 900;
+
+//font-size
+$fontBody: 15px;
+$fontTitle: 32px;
+$fontSubTitle: 12px;
+$fontFooter: 15px;
+
+//color
+$backgroundBody: #F4F5F6;
+$primaryBlue: #0797D4;
+$second: #9DADBC;
+$primaryDarkBlue: #223032;
+$gray: #9dadbc;
+$textBody: #000000;
+$white: #FFFFFF;
+$black: #000000;
+$border: #BBC0C1;
+$color0F: #0F0F0F;
+$color5C: #5C5C5C;
+$colorDA: #DADADA;
+$colorBA: #BABABA;
+$colorC4: #C4C4C4;
+$colorD7: #D7D7D7;
+$color9F: #9F9F9F;
+
+//media
+$tablets: "screen and (min-width: 600px)";
+$laptop: "screen and (min-width: 768px)";
+$large-screen: "screen and (min-width: 1400px)";
+$small-screen: "screen and (min-width: 992px)";
+
+// for media
+$mobiles: "screen and (min-width: 0) and (max-width: 500px)";
+$tablets: "screen and (min-width: 501px) and (max-width: 1024px)";
+$laptop: "screen and (min-width: 768px)";
+
